@@ -156,8 +156,6 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     stats_text = f"""
 📊 **Bot Statistics**
 
-🏢 **Active Channels:** {total_channels}
-⏳ **Total Pending Requests:** {total_pending}
 🤖 **Status:** Online & Active
 🔄 **Uptime:** 24/7
 
@@ -194,7 +192,7 @@ async def log_join_request(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         # Send notification to channel (optional)
         pending_count = get_pending_count(chat.id)
-        notification = f"📥 **New Join Request**\n\n👤 {user.full_name}\n📊 Total Pending: {pending_count}\n\n💡 Send `/approve` to approve all pending requests."
+        notification = f""
         
         try:
             await context.bot.send_message(
